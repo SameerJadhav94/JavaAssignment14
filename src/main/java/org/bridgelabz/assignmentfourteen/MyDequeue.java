@@ -1,11 +1,11 @@
 package org.bridgelabz.assignmentfourteen;
 
-public class MyQueue {
+public class MyDequeue {
     MyLinkedList myLinkedList;
-    public MyQueue() {
+
+    public MyDequeue() {
         this.myLinkedList = new MyLinkedList();
     }
-
     public void add(MyNode myNode) {
         myLinkedList.add(myNode);
 
@@ -15,11 +15,17 @@ public class MyQueue {
         myLinkedList.append(myNode);
     }
 
-    public void printQueue() {
+    public void printDeQueue() {
         myLinkedList.printMyNodes();
     }
 
     public INode peak() {
         return myLinkedList.head;
-    }
 }
+
+    public INode pop() {
+        return myLinkedList.pop();
+
+    }
+
+    }
