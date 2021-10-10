@@ -43,7 +43,6 @@ public class MyLinkedListTest {
             myLinkedList.printMyNodes();
         }
 
-    public static final Logger LOG = LogManager.getLogger(MyLinkedListTest.class);
         @Test
         public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedList(){
             MyNode<Integer> myFirstNode = new MyNode<>(56 );
@@ -57,13 +56,30 @@ public class MyLinkedListTest {
                              myLinkedList.head.getNext().equals(mySecondNode) &&
                              myLinkedList.tail.equals(myThirdNode);
             Assert.assertTrue(result);
+            myLinkedList.printMyNodes();
+        }
 
+    public static final Logger LOG = LogManager.getLogger(MyLinkedListTest.class);
+        @Test
+        public void givenFirstElementWhenDeletedShouldPassLinkedListTest(){
+            MyNode<Integer> myFirstNode = new MyNode<>(56 );
+            MyNode<Integer> mySecondNode = new MyNode<>(30 );
+            MyNode<Integer> myThirdNode = new MyNode<>(70 );
+            MyLinkedList myLinkedList = new MyLinkedList();
+            myLinkedList.add(myFirstNode);
+            myLinkedList.append(mySecondNode);
+            myLinkedList.append(myThirdNode);
+            myLinkedList.pop();
+            boolean result = myLinkedList.head.equals(mySecondNode) &&
+                    myLinkedList.tail.equals(myThirdNode);
+            Assert.assertTrue(result);
             LOG.debug("Debugging");
             LOG.info("Info");
             LOG.warn("Warning");
             LOG.error("Error");
             LOG.fatal("Fatal");
             myLinkedList.printMyNodes();
+
         }
 
 
